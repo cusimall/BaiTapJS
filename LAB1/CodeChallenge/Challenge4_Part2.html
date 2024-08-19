@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>part4</title>
+</head>
+<body>
+    <script>
+        //calcTip function is already defined as
+        const calcTip = (bill) => bill >= 50 && bill <= 300 ? bill * 0.15 : bill * 0.2;
+
+        //bills array
+        const bills = [22, 295, 176, 440, 37, 105, 10, 1100, 86, 52];
+
+        //empty arrays for 'tips' and 'totals'
+        const tips = [];
+        const totals = [];
+
+        //loop to calculate tips and totals
+        for (let i = 0; i < bills.length; i++) {
+            const tip = calcTip(bills[i]);
+            tips.push(tip);
+            totals.push(bills[i] + tip);
+        }
+
+        //results
+        console.log("Bills:", bills);
+        console.log("Tips:", tips);
+        console.log("Totals:", totals);
+
+        // Bonus: calcAverage function
+        const calcAverage = function(arr) {
+            let sum = 0;
+            for (let i = 0; i < arr.length; i++) {
+                sum += arr[i];
+            }
+            return sum / arr.length;
+        };
+
+        // Calculate and log the average of the totals
+        console.log("Average Total:", calcAverage(totals));
+
+    </script>
+</body>
+</html>
