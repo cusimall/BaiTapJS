@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cpart4</title>
+</head>
+<body>
+    <script>
+        //data
+        let bill1 = 275;
+        let bill2 = 40;
+        let bill3 = 430;
+
+        // Function to calculate
+        function calculateTipAndTotal(bill) {
+            let tip = bill >= 50 && bill <= 300 ? bill * 0.15 : bill * 0.2;
+            let total = bill + tip;
+            console.log(`The bill was ${bill}, the tip was ${tip.toFixed(2)}, and the total value is ${total.toFixed(2)}`);
+        }
+
+        //print results
+        calculateTipAndTotal(bill1);
+        calculateTipAndTotal(bill2);
+        calculateTipAndTotal(bill3);
+
+    </script>
+</body>
+</html>
