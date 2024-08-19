@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CPart3</title>
+</head>
+<body>
+    <script>
+        // Function calcualteAverage
+        function calculateAverage(score1, score2, score3) {
+            return (score1 + score2 + score3) / 3;
+        }
+
+        // test data
+        let dolphinsScores1 = [96, 108, 89];
+        let koalasScores1 = [88, 91, 110];
+
+        let dolphinsScoresBonus1 = [97, 112, 101];
+        let koalasScoresBonus1 = [109, 95, 123];
+
+        let dolphinsScoresBonus2 = [97, 112, 101];
+        let koalasScoresBonus2 = [109, 95, 106];
+
+        // calculate average scores
+        let dolphinsAverage1 = calculateAverage(...dolphinsScores1);
+        let koalasAverage1 = calculateAverage(...koalasScores1);
+
+        let dolphinsAverageBonus1 = calculateAverage(...dolphinsScoresBonus1);
+        let koalasAverageBonus1 = calculateAverage(...koalasScoresBonus1);
+
+        let dolphinsAverageBonus2 = calculateAverage(...dolphinsScoresBonus2);
+        let koalasAverageBonus2 = calculateAverage(...koalasScoresBonus2);
+
+        // function to determine the winner
+        function determineWinner(dolphinsAverage, koalasAverage, minimumScore = 0) {
+            if (dolphinsAverage >= minimumScore && dolphinsAverage > koalasAverage) {
+                console.log(`Dolphins win with an average score of ${dolphinsAverage.toFixed(2)}!`);
+            } else if (koalasAverage >= minimumScore && koalasAverage > dolphinsAverage) {
+                console.log(`Koalas win with an average score of ${koalasAverage.toFixed(2)}!`);
+            } else if (dolphinsAverage >= minimumScore && koalasAverage >= minimumScore && dolphinsAverage === koalasAverage) {
+                console.log(`It's a draw! Both teams have an average score of ${dolphinsAverage.toFixed(2)}.`);
+            } else {
+                console.log("No team wins the trophy.");
+            }
+        }
+
+        // Data 1: Determine the winner
+        console.log("Data 1:");
+        determineWinner(dolphinsAverage1, koalasAverage1);
+
+        //Bonus 1: Determine the winner with a minimum score of 100
+        console.log("Data Bonus 1:");
+        determineWinner(dolphinsAverageBonus1, koalasAverageBonus1, 100);
+
+        //Bonus 2: Determine the winner with a minimum score of 100
+        console.log("Data Bonus 2:");
+        determineWinner(dolphinsAverageBonus2, koalasAverageBonus2, 100);
+    </script>
+</body>
+</html>
