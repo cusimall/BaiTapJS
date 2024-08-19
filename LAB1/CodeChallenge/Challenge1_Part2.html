@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //function to calculate average of 3 scores
+        const calcAverage = (score1, score2, score3) => (score1 + score2 + score3) / 3;
+
+        // data
+        const dolphinsScores1 = calcAverage(44, 23, 71);
+        const koalasScores1 = calcAverage(65, 54, 49);
+
+        const dolphinsScores2 = calcAverage(85, 54, 41);
+        const koalasScores2 = calcAverage(23, 34, 27);
+
+        //Function to check the winner
+        const checkWinner = (avgDolphins, avgKoalas) => {
+            if (avgDolphins >= 2 * avgKoalas) {
+                console.log(`Dolphins win (${avgDolphins} vs. ${avgKoalas})`);
+            } else if (avgKoalas >= 2 * avgDolphins) {
+                console.log(`Koalas win (${avgKoalas} vs. ${avgDolphins})`);
+            } else {
+                console.log('No team wins!');
+            }
+        };
+
+        //Determine the winner for both datasets
+        console.log("Data 1:");
+        checkWinner(dolphinsScores1, koalasScores1);
+
+        console.log("Data 2:");
+        checkWinner(dolphinsScores2, koalasScores2);
+
+    </script>
+</body>
+</html>
